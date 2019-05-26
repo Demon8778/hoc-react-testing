@@ -10,15 +10,20 @@ export const saveComment = comment => {
 };
 
 export const fetchComments = () => {
-	return async dispatch => {
-		const response = await axios.get(
-			'https://jsonplaceholder.typicode.com/comments'
-		);
+	// return async dispatch => {
+	// 	const response = await axios.get(
+	// 		'https://jsonplaceholder.typicode.com/comments'
+	// 	);
 
-		dispatch({
-			type: FETCH_COMMENTS,
-			payload: response
-		});
+	// 	dispatch({
+	// 		type: FETCH_COMMENTS,
+	// 		payload: response
+	// 	});
+	// };
+	const response = axios.get('https://jsonplaceholder.typicode.com/comments');
+	return {
+		type: FETCH_COMMENTS,
+		payload: response
 	};
 };
 
